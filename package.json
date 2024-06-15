@@ -1,7 +1,9 @@
 {
-  "name": "wallet-connector",
-  "version": "0.1.0",
-  "private": true,
+  "name": "edmond-wallet-connector",
+  "version": "0.1.7",
+  "private": false,
+  "main": "app/components/Wallet.tsx",
+  "types": "app/components/Wallet.tsx",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,5 +26,8 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
