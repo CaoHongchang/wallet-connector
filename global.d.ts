@@ -15,6 +15,10 @@ declare global {
       }
     }
 
-    solana: any
+    solana: {
+      isPhantom: boolean
+      connect: () => Promise<void>
+      signMessage: (message: string) => Promise<string>
+    }
   }
 }

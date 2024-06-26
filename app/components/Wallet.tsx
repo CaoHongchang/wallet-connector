@@ -14,6 +14,7 @@ import {
   sei,
 } from 'wagmi/chains'
 import { combo } from '@/app/config/combo'
+import { getProvider } from '@/app/utils/SolanaProvider'
 
 interface WalletButton {
   name: string
@@ -24,18 +25,6 @@ interface WalletButton {
 const Wallet = () => {
   const { connectors, connect } = useConnect()
   const { chains, switchChain } = useSwitchChain()
-
-  const getProvider = () => {
-    if ('phantom' in window) {
-      const provider = window.phantom?.solana
-
-      if (provider?.isPhantom) {
-        return provider
-      }
-    }
-
-    // window.open('https://phantom.app/', '_blank')
-  }
 
   console.log('chains', chains)
 
