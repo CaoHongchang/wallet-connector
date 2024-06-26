@@ -1,3 +1,5 @@
+import { Transaction } from '@solana/web3.js'
+
 export {}
 
 declare global {
@@ -16,8 +18,11 @@ declare global {
     }
 
     solana: {
+      signAndSendTransaction(
+        transaction: Transaction
+      ): { signature: any } | PromiseLike<{ signature: any }>
       isPhantom: boolean
-      connect: () => Promise<void>
+      connect: () => Promise<any>
       signMessage: (message: string) => Promise<string>
     }
   }
